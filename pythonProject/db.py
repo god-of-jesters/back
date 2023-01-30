@@ -5,4 +5,5 @@ def ins(mes: int):
     cur = d.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS users(int id, string name)")
     cur.execute(f"INSERT INTO users VALUES({mes}, 'АГЫВШ')")
+    d.commit()
     return "Goood"
