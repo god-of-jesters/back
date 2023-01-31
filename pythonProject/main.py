@@ -10,7 +10,8 @@ bot = telebot.TeleBot(TG_tok)
 def start(message):
     id = message.chat.id
     bot.send_message(id, 'Приветики')
-    print(id)
-    print(ins(id))
 
+@bot.message_handler(commands=['register'])
+def register(reg):
+    ins(reg.chat.id, reg.from_user.first_name, reg.from_user.last_name)
 bot.polling(none_stop=True)
